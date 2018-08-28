@@ -43,33 +43,16 @@
     mounted() {
       //获取热门商品列表
       this.getHotProducts();
-      // this.cors()
+      this.cors()
     },
     methods: {
       ...mapActions(['getHotProducts']),
       cors() {
         var that = this;
-        axios('/snh48/gift/stat?callback=jQuery112408395746072642423_1535016626831&_=1535016626832')
-          .then(function (response) {
-            console.log(response);
-            let data = response.data;
-            data = data.substr(42,100)
-            data.indexOf('(')
-            console.log(data.indexOf('('));
-            console.log(data);
-            /*使用字符串截取，把前面的数据删除，返回一个json字符串，然后转化为json对象，这样可以获取值*/
-
-            /*data是字符串，不是json数据*/
-            // that.list = response.data;
-          })
-          .catch(function (error) {
-            console.log(error);
-          })
-
         axios('/rexxar/api/v2/muzzy/columns/10018/items?start=0&count=3')
           .then(function (response) {
-            // console.log(response);
-            // console.log(response.data.items);
+            console.log(response);
+            console.log(response.data.items);
 
             // that.list = response.data.items
 
